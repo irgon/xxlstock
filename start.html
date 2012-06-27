@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Author" content="Igor Rzegocki" />
+    <meta name="Copyright" content="Copyright (c) 2010 Igor Rzegocki" />
+
+    <meta name="Robots" content="index, follow" />
+    <meta name="Revisit-after" content="7 days" />
+
+    <link href="css/style.css" media="screen" rel="Stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    //<![[CDATA
+    $(document).ready(function() {
+        var ANIMATION_SPEED = 10000;
+        var PICTURES_INTERVAL = 1000;
+        
+        $('#top .gradient-top').width($('#top').width() - $('#top .gradient-left').width() - $('#top .gradient-right').width());
+        infinite_animation = function() {
+            $('#top ul.images').animate({top: '-=96'}, ANIMATION_SPEED, 'linear', infinite_animation);
+            // PUT PATH RETRIEVING 21 NEW IMAGES VIA AJAX HERE
+            $('#top ul.images').append($('<li><img src="img/1.jpg" /></li><li><img src="img/2.jpg" /></li><li><img src="img/3.jpg" /></li><li><img src="img/4.jpg" /></li><li><img src="img/5.jpg" /></li><li><img src="img/6.jpg" /></li><li><img src="img/7.jpg" /></li><li><img src="img/8.jpg" /></li><li><img src="img/9.jpg" /></li><li><img src="img/10.jpg" /></li><li><img src="img/11.jpg" /></li><li><img src="img/12.jpg" /></li><li><img src="img/13.jpg" /></li><li><img src="img/14.jpg" /></li><li><img src="img/15.jpg" /></li><li><img src="img/16.jpg" /></li><li><img src="img/17.jpg" /></li><li><img src="img/18.jpg" /></li><li><img src="img/19.jpg" /></li><li><img src="img/20.jpg" /></li><li><img src="img/1.jpg" /></li>'));
+            // ---
+            $($('#top ul.images li').slice(0,21)).remove();
+            $('#top ul.images').css('padding-top', (parseInt($('#top ul.images').css('padding-top')) + 96).toString() + 'px');
+        }
+        
+        $('#searchinput').data('default', $('#searchinput').val());
+        $('#searchinput').bind('focus', function(e) {
+            if($(this).val() == $(this).data('default')) {
+                $(this).val('');
+            }
+        });
+        $('#searchinput').bind('blur', function(e) {
+            if($(this).val() == '') {
+                $(this).val($(this).data('default'));
+            }
+        });
+        
+        infinite_animation();
+        
+        setInterval(function() {
+            var position = parseInt(Math.random() * 84 + 21);
+            $($('#top ul.images li img')[position]).fadeOut(500, function() {$(this).remove();});
+            // PUT PATH RETRIEVING OF NEW IMAGE VIA AJAX HERE
+            new_img = $('<img src="img/' + parseInt(Math.random() * 19 + 1).toString() + '.jpg" style="display: none;"/>');
+            // ---
+            $($('#top ul.images li')[position]).append(new_img);
+            new_img.fadeIn(500);
+        }, PICTURES_INTERVAL);
+    });
+    //]]>
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="top">
+            <ul class="images">
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+                <li><img src="img/7.jpg" /></li>
+                <li><img src="img/8.jpg" /></li>
+                <li><img src="img/9.jpg" /></li>
+                <li><img src="img/10.jpg" /></li>
+                <li><img src="img/11.jpg" /></li>
+                <li><img src="img/12.jpg" /></li>
+                <li><img src="img/13.jpg" /></li>
+                <li><img src="img/14.jpg" /></li>
+                <li><img src="img/15.jpg" /></li>
+                <li><img src="img/16.jpg" /></li>
+                <li><img src="img/17.jpg" /></li>
+                <li><img src="img/18.jpg" /></li>
+                <li><img src="img/19.jpg" /></li>
+                <li><img src="img/20.jpg" /></li>
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+                <li><img src="img/6.jpg" /></li>
+            </ul>
+            <div class="gradient-left"></div>
+            <div class="gradient-right"></div>
+            <div class="gradient-top"></div>
+            <div id="main-top">
+                <div id="logo"><h1>XXLStock</h1> <h2>Best stock photo agency</h2></div>
+                <div id="menu">
+                    <ul>
+                        <li class="left"><a href=""><span>Logowanie</span></a></li>
+                        <li><a href=""><span>Rejestracja</span></a></li>
+                        <li><a href=""><span>Ulubione</span></a></li>
+                        <li><a href=""><span>Sprzedaj</span></a></li>
+                        <li class="right"><a href=""><span>Pomoc</span></a></li>
+                    </ul>
+                </div>
+                <form id="search" action="" method="get" autocomplete="off">
+                    <fieldset>
+                        <label for="searchinput"><strong>Wyszukaj</strong> i kup zdjęcia, filmy, audiobooki, animację w jednym miejscu</label>
+                        <input type="text" name="search" id="searchinput" class="text" value="Wpisz szukaną frazę, np. drzewo" />
+                        <button type="submit" name="search" id="searchsubmit">Szukaj</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div id="content">
+            <div class="column column-left">
+                <h3>Kup abonament 30% taniej</h3>
+                <img src="img/slide1.jpg" />
+                <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</p>
+            </div>
+            <div class="column">
+                <h3>Jak kupić pierwsze zdjęcie?</h3>
+                <img src="img/slide2.jpg" />
+                <p>Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.</p>
+            </div>
+            <div class="column">
+                <h3>Zarabiaj sprzedając swoje media</h3>
+                <img src="img/slide3.jpg" />
+                <p>Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed.</p>
+            </div>
+        </div>
+        <div id="footer">
+            <ul>
+                <li class="left"><a href="">O nas</a></li>
+                <li><a href="">Regulamin</a></li>
+                <li><a href="">Polityka prywatności</a></li>
+                <li><a href="">Prasa</a></li>
+                <li><a href="">Kontakt</a></li>
+            </ul>
+            <address>
+                <span>Projekt i realizacja a.net.pl</span>
+                Wszelkie prawa zastrzeżone &copy; <a href="">XXLStock polska sp z o.o.</a>
+            </address>
+        </div>
+    </div>
+</body>
+</html>

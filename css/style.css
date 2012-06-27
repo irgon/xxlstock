@@ -1,0 +1,317 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, select, button
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: #ffffff;
+    line-height: 18px;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#top {
+    overflow: hidden;
+    width: 100%;
+    padding: 92px 0 0 0;
+    position: relative;
+    height: 464px;
+    background: #000000;
+}
+
+#top ul.images {
+    overflow: hidden;
+    width: 2016px;
+    position: absolute;
+    top: -13px;
+    left: 0;
+}
+
+#top ul.images li {
+    float: left;
+    display: block;
+    width: 93px;
+    height: 93px;
+    margin: 0 3px 3px 0;
+    opacity: 0.35;
+    filter: alpha(opacity=35);
+    position: relative;
+}
+
+#top ul.images li img {
+    display: block;
+    width: 93px;
+    height: 93px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#top div.gradient-left,
+#top div.gradient-right,
+#top div.gradient-top {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 584px;
+    width: 450px;
+}
+
+#top div.gradient-left {
+    left: 0;
+    background: url(../img/gradient-left.png) no-repeat;
+}
+
+#top div.gradient-right {
+    right: 0;
+    background: url(../img/gradient-right.png) no-repeat;
+}
+
+#top div.gradient-top {
+    left: 450px;
+    background: url(../img/gradient-top.png) repeat-x;
+}
+
+#top #main-top {
+    width: 980px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -490px;
+    z-index: 3;
+    overflow: hidden;
+    height: 556px;
+}
+
+#main-top #logo {
+    margin: 31px 0 0 19px;
+    width: 191px;
+    height: 71px;
+    background: url(../img/logo.png) no-repeat;
+    float: left;
+}
+
+#main-top #logo h1,
+#main-top #logo h2 {
+    display: none;
+}
+
+#menu {
+    float: right;
+    overflow: hidden;
+    background: url(../img/menu-right.png) no-repeat;
+    background-position: right top;
+    padding: 0 6px 0 0;
+    height: 43px;
+    margin: 35px 0 0 0;
+}
+
+#menu ul {
+    height: 43px;
+    background: url(../img/menu-left.png) no-repeat;
+}
+
+#menu ul li {
+    display: block;
+    float: left;
+    height: 43px;
+}
+
+#menu ul li.left a,
+#menu ul li.left a:hover,
+#menu ul li.left-selected a:hover {
+    background: none;
+}
+
+#menu ul li.right {
+    margin: 0 -6px 0 0;
+}
+
+#menu ul li a,
+#menu ul li a span {
+    display: block;
+    height: 43px;
+    color: #f5f5f5;
+    font-size: 15px;
+    line-height: 43px;
+    background: url(../img/menu-sep.png) no-repeat;
+    background-position: left top;
+}
+
+#menu ul li a span {
+    padding: 0 15px 0 16px;
+}
+
+#menu ul li.left a,
+#menu ul li.left a span,
+#menu ul li.left a:hover span,
+#menu ul li.left-selected a span {
+    background: none;
+}
+
+#menu ul li.selected a,
+#menu ul li a:hover {
+    background: url(../img/menu-sel.png) no-repeat;
+    background-position: -7px top;
+}
+
+#menu ul li.left-selected a,
+#menu ul li.left a:hover {
+    background: url(../img/menu-sel.png) no-repeat;
+    background-position: left top;
+}
+
+#menu ul li.right-selected a,
+#menu ul li.right a:hover {
+    background: url(../img/menu-sel.png) no-repeat;
+    background-position: right top;
+}
+
+#menu ul li.selected a span,
+#menu ul li a:hover span {
+    background: url(../img/menu-sel-sep.png) no-repeat;
+    background-position: left top;
+}
+
+#search {
+    display: block;
+    width: 570px;
+    height: 98px;
+    background: url(../img/search.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -355px;
+    top: 233px;
+    padding: 52px 70px;
+}
+
+#search label {
+    font-size: 16px;
+    color: #666666;
+    display: block;
+    margin: 0 0 20px;
+}
+
+#search label strong {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 2px 0 0;
+    color: #ffffff;
+}
+
+#search input {
+    color: #999999;
+    font-size: 15px;
+    width: 410px;
+    padding: 14px 15px 15px;
+    background: url(../img/input.png) no-repeat;
+}
+
+#search button {
+    width: 118px;
+    height: 45px;
+    line-height: 45px;
+    text-indent: -1000em;
+    overflow: hidden;
+    background: url(../img/search-button.png) no-repeat;
+    margin: 1px 0 1px 8px;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    border: none;
+    padding: 0;
+}
+
+button::-moz-focus-inner {
+    border: 0 none;
+    padding: 0;
+}
+
+#content {
+    width: 980px;
+    margin: 0 auto;
+    padding: 31px 0 60px 0;
+    overflow: hidden;
+}
+
+#content div.column {
+    width: 309px;
+    float: left;
+    margin: 0 0 0 26px;
+}
+
+#content div.column-left {
+    margin: 0;
+}
+
+#content div.column h3 {
+    font-size: 16px;
+    margin: 0 0 13px 0;
+}
+
+#content div.column p {
+    margin: 12px 0 0 0;
+}
+
+#footer {
+    width: 980px;
+    margin: 0 auto 145px;
+}
+
+#footer ul {
+    height: 35px;
+    width: 976px;
+    background: url(../img/footer.png) no-repeat;
+    padding: 0 2px;
+    line-height: 35px;
+    margin: 0 0 22px 0;
+}
+
+#footer ul li {
+    display: inline;
+}
+
+#footer ul li a {
+    padding: 0 8px;
+    border-left: solid 1px #000000;
+    color: #000000;
+    text-decoration: underline;
+}
+
+#footer ul li.left a {
+    border: none;
+}
+
+#footer address {
+    font-style: normal;
+    overflow: hidden;
+}
+
+#footer address a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+#footer address span {
+    float: right;
+}
